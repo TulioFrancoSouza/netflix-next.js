@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link';
 
-export default function MovieDetails(data) {
+export default function MovieDetails({info}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,12 +14,13 @@ export default function MovieDetails(data) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          {data.title}
+          {info.title}
         </h1>
+        <h2>
+          {info.overview}
+        </h2>
 
-        <p className={styles.description}>
-          {data.overview}
-        </p>
+        <p>Score: {info.vote_average}</p>
 
         <div className={styles.grid}>
 
@@ -27,7 +28,7 @@ export default function MovieDetails(data) {
             Search for a specific movie
           </Link>
           
-            <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}></img>
+            <img src={`https://image.tmdb.org/t/p/original${info.backdrop_path}`} width={150} height={150}></img>
             
                
         </div>
@@ -49,18 +50,16 @@ export default function MovieDetails(data) {
   )
 }
 
-export async function getServerSideProps(context){
+export async function getServerSideProps(context){ 
 
-  let id = context.params.id; 
-
-  const res = await fetch(`http://localhost:3000/api/movie/${id}`)
+  const res = await fetch(`http://localhost:3000/api/movie/${context.params.id}`)
   const json = await res.json();
 
   console.log("JSON", json)
 
   return{
     props: {
-      data: json.info
+      info: json.info
     }
   };
 }
