@@ -2,8 +2,10 @@
   background: url(../public/assets/background.jpg);
   background-size: cover;
   filter: opacity(0.9);
-  min-height: 75vh;
+}
 
+.content{
+  min-height: 100vh;
 }
 
 .header{
@@ -14,19 +16,28 @@
 }
 
 .language{
-  line-height: 1.3em;
-  padding-left: 1.375rem;
-  padding-right: 1.375rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #aaa;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.35rem 1.3rem;
+
 }
 
 .logo{
-  padding: 20px;
-  margin: 143px;
-
+  padding: 36px;
+  margin: 133px;
 }
 
 .button{
-  padding: 1rem;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 9px 20px;
+  margin-left: 1rem;
+  background-color: #f40612;
+  border-radius: 3px;
 }
 
 .overlay {
@@ -36,13 +47,52 @@
     background: #000;
     width: 100%;
     height: 100%;
-    opacity: 0.7;
+    opacity: 0.75;
     z-index: -1;
 }
 
 .heading {
-  display: block;
+  margin-top: 5rem;
   text-align: center;
   color: #fff;
+}
+
+.h1{
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.h2{
+  font-size: 1rem;
+  margin: 0.5rem 0.75rem;
+}
+
+.emailBoxLookup{
+  max-width: 640px;
+  text-align: center;
+}
+
+.input{
+  font-size: 1rem;;
+  height: 60px;
+  width: 45%;
+  padding: 10px 10px;
+  min-width: 450px;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
+  appearance: none;
+}
+
+.buttonEmailBoxLookup{
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 9px 20px;
+  margin-left: 1rem;
+  background-color: #f40612;
+  border-radius: 3px;
 }
 

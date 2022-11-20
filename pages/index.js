@@ -13,23 +13,30 @@ export default function Home({ list }) {
         <link rel="icon" href="#" />
       </Head>
 
-      <div>
+      <div className={Styles.content}>
         <header className={Styles.header}>
-          <Image className={Styles.logo} src={Logo} alt="Netflix Logo" width="167" height="45" />
-          <div className={Styles.language}><select>
-            <option value="Portuguese">Portuguese</option>
-            <option value="English">English</option>
+          <Image className={Styles.logo} src={Logo} alt="Netflix Logo" width="133" height="36" />
+          <div>
+            <select className={Styles.language}>
+              <option value="Portuguese">Portuguese</option>
+              <option value="English">English</option>
           </select>
             <button className={Styles.button}>Sign In</button>
           </div>
         </header>
         
         <div className={Styles.heading}>
-          <h1>Unlimited movies, TV shows, and more.</h1>
+          <h1 className={Styles.h1}>Unlimited movies, TV shows, and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
-          <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+          <div className={Styles.emailBoxLookup}>
+            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+            <input className={Styles.input} type='email' name='email'/>
+            <button className={Styles.buttonEmailBoxLookup} type='submit'>Get Started</button>
+          </div>
         </div>
       </div>
+
+      <div></div>
     </div>
   )
 }
